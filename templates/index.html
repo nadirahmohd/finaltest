@@ -10,76 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <title>News Verification</title>
   <style>
-      body {
-          background-color: #f8f9fa; /* Light grey background color */
-          color: #495057; /* Text color */
-          font-family: 'Arial', sans-serif; /* Choose a suitable font */
-      }
-
-      .container {
-          margin-top: 30px;
-      }
-
-      .header {
-          text-align: center;
-          background-color: #007bff; /* Bootstrap primary color */
-          color: #fff; /* White text color */
-          padding: 15px;
-      }
-
-      .title {
-          margin: 0;
-          font-size: 36px;
-      }
-
-      form {
-          background-color: #fff;
-          padding: 20px;
-          border-radius: 8px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-
-      label {
-          font-weight: bold;
-      }
-
-      input,
-      textarea {
-          width: 100%;
-          padding: 8px;
-          margin-bottom: 10px;
-          border: 1px solid #ced4da; /* Bootstrap input border color */
-          border-radius: 4px;
-          box-sizing: border-box;
-      }
-
-      button {
-          background-color: #28a745; /* Bootstrap success color */
-          color: #fff;
-          padding: 10px 20px;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-      }
-
-      button:hover {
-          background-color: #218838; /* Darker shade on hover */
-      }
-
-      .outcome {
-          margin-top: 20px;
-          font-size: 18px;
-      }
-
-      .supporting-links {
-          margin-top: 10px;
-      }
-
-      .footer {
-          text-align: center;
-          margin-top: 30px;
-          color: #6c757d; /* Bootstrap text-muted color */
-      }
+      /* your existing styles here */
   </style>
 
 </head>
@@ -114,78 +45,7 @@
 
 <!-- JavaScript to handle form submission and display outcome -->
 <script>
-    document.getElementById('newsForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        var enteredTitle = document.getElementById('newsTitle').value;
-        var outcomeElement = document.getElementById('outcome');
-        var supportingLinksElement = document.getElementById('supportingLinks');
-
-        // Check the entered title against multiple real news titles
-        if (enteredTitle === "As U.S. budget fight looms, Republicans flip their fiscal script" ||
-            enteredTitle === "U.S. military to accept transgender recruits on Monday: Pentagon" ||
-            enteredTitle === "Senior U.S. Republican senator: 'Let Mr. Mueller do his job'" ||
-            enteredTitle === "FBI Russia probe helped by Australian diplomat tip-off: NYT" ||
-            enteredTitle === "Trump wants Postal Service to charge 'much more' for Amazon shipments") {
-
-            outcomeElement.innerHTML = "<p>This is the REAL NEWS and has been published in</p>";
-
-            // Add corresponding links based on the entered title
-            switch (enteredTitle) {
-                case "As U.S. budget fight looms, Republicans flip their fiscal script":
-                    supportingLinksElement.innerHTML = createEmbeddedLink([
-                        'https://www.reuters.com/article/idUSKBN1EP0LJ/',
-                        'https://www.tnp.sg/news/business/us-budget-fight-looms-republicans-flip-their-fiscal-scrip'
-                    ]);
-                    break;
-
-                case "U.S. military to accept transgender recruits on Monday: Pentagon":
-                    supportingLinksElement.innerHTML = createEmbeddedLink([
-                        'https://jp.reuters.com/article/us-usa-military-transgender-idUSKBN1EN1LV/',
-                        'https://www.nst.com.my/world/2017/12/319741/us-military-accept-transgender-recruits-monday-pentagon'
-                    ]);
-                    break;
-
-                case "Senior U.S. Republican senator: 'Let Mr. Mueller do his job'":
-                    supportingLinksElement.innerHTML = createEmbeddedLink([
-                        'https://www.reuters.com/article/idUSKBN1EP0KE/',
-                        'https://www.wionews.com/world/us-republicans-to-trump-let-mueller-do-his-job-36274'
-                    ]);
-                    break;
-
-                case "FBI Russia probe helped by Australian diplomat tip-off: NYT":
-                    supportingLinksElement.innerHTML = createEmbeddedLink([
-                        'https://www.reuters.com/article/us-usa-trump-russia-papadopoulos/fbi-russia-probe-helped-by-australian-diplomat-tip-off-nyt-idUSKBN1EO0K8/',
-                        'https://www.nytimes.com/2017/12/30/us/politics/how-fbi-russia-investigation-began-george-papadopoulos.html',
-                        'https://www.thestar.com.my/news/world/2017/12/31/fbi-russia-probe-helped-by-australian-diplomat-tipoff--nyt'
-                    ]);
-                    break;
-
-                case "Trump wants Postal Service to charge 'much more' for Amazon shipments":
-                    supportingLinksElement.innerHTML = createEmbeddedLink([
-                        'https://www.reuters.com/article/idUSKBN1EN15O/',
-                        'https://www.washingtonpost.com/business/economy/trump-personally-pushed-postmaster-general-to-double-rates-on-amazon-other-firms/2018/05/18/2b6438d2-5931-11e8-858f-12becb4d6067_story.html'
-                    ]);
-                    break;
-
-                default:
-                    supportingLinksElement.innerHTML = "";
-                    break;
-            }
-        } else {
-            outcomeElement.innerHTML = "<p>THIS IS FAKE NEWS</p>";
-            supportingLinksElement.innerHTML = "";
-        }
-    });
-
-    // Function to create embedded links
-    function createEmbeddedLink(urls) {
-        var embeddedLinks = "";
-        urls.forEach(function (url) {
-            embeddedLinks += '<iframe src="' + url + '" width="100%" height="400px"></iframe><br>';
-        });
-        return embeddedLinks;
-    }
+    // your existing script here
 </script>
 </body>
 </html>
