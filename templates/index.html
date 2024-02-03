@@ -93,11 +93,11 @@
             <form action="/verify-news" method="post" id="newsForm">
                 <div class="mb-3">
                     <label for="newsTitle" class="form-label">News Title</label>
-                    <input type="text" class="form-control" id="newsTitle" name="newsTitle" placeholder="Enter news title">
+                    <input type="text" class="form-control" id="newsTitle" name="newsTitle" placeholder="Enter news title" required>
                 </div>
                 <div class="mb-3">
                     <label for="newsText" class="form-label">News Text</label>
-                    <textarea class="form-control" id="newsText" name="newsText" rows="3" placeholder="Enter news text"></textarea>
+                    <textarea class="form-control" id="newsText" name="newsText" rows="3" placeholder="Enter news text" required></textarea>
                 </div>
                 <button type="submit" form="newsForm" value="Submit">Verify News</button>
                 <div class="outcome" id="outcome"></div>
@@ -114,38 +114,7 @@
 
 <!-- JavaScript to handle form submission and display outcome -->
 <script>
-    document.getElementById('newsForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        var enteredTitle = document.getElementById('newsTitle').value;
-        var realNewsTitle = "As U.S. budget fight looms, Republicans flip their fiscal script";
-
-        var outcomeElement = document.getElementById('outcome');
-        var supportingLinksElement = document.getElementById('supportingLinks');
-
-        if (enteredTitle === realNewsTitle) {
-            outcomeElement.innerHTML = "<p>This is the REAL NEWS and has been published in</p>";
-            supportingLinksElement.innerHTML = "<div class='iframely-embed'>" +
-                "<div class='iframely-responsive' style='padding-bottom: 52.3333%; padding-top: 120px;'>" +
-                "<a href='https://www.reuters.com/article/idUSKBN1EP0LJ/' data-iframely-url='//iframely.net/I6gdUez'></a>" +
-                "</div>" +
-                "</div>" +
-                "<div class='iframely-embed'>" +
-                "<div class='iframely-responsive' style='height: 140px; padding-bottom: 0;'>" +
-                "<a href='https://www.tnp.sg/news/business/us-budget-fight-looms-republicans-flip-their-fiscal-scrip' data-iframely-url='//iframely.net/KpJI8OU'></a>" +
-                "</div>" +
-                "</div>";
-
-            // Dynamically load Iframely script after setting the inner HTML
-            var script = document.createElement('script');
-            script.src = 'https://iframely.net/embed.js';
-            script.async = true;
-            document.head.appendChild(script);
-        } else {
-            outcomeElement.innerHTML = "<p>THIS IS FAKE NEWS</p>";
-            supportingLinksElement.innerHTML = "";
-        }
-    });
+    // your existing script here
 </script>
 </body>
 </html>
