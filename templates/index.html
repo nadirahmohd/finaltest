@@ -118,12 +118,25 @@
         event.preventDefault();
 
         var enteredTitle = document.getElementById('newsTitle').value;
-
         var outcomeElement = document.getElementById('outcome');
         var supportingLinksElement = document.getElementById('supportingLinks');
 
         // Check the entered title against multiple real news titles
         switch (enteredTitle) {
+            case "As U.S. budget fight looms, Republicans flip their fiscal script":
+                outcomeElement.innerHTML = "<p>This is the REAL NEWS and has been published in</p>";
+                supportingLinksElement.innerHTML = "<div class='iframely-embed'>" +
+                    "<div class='iframely-responsive' style='padding-bottom: 52.3333%; padding-top: 120px;'>" +
+                    "<a href='https://www.reuters.com/article/idUSKBN1EP0LJ/' data-iframely-url='//iframely.net/I6gdUez'></a>" +
+                    "</div>" +
+                    "</div>" +
+                    "<div class='iframely-embed'>" +
+                    "<div class='iframely-responsive' style='height: 140px; padding-bottom: 0;'>" +
+                    "<a href='https://www.tnp.sg/news/business/us-budget-fight-looms-republicans-flip-their-fiscal-scrip' data-iframely-url='//iframely.net/KpJI8OU'></a>" +
+                    "</div>" +
+                    "</div>";
+                break;
+
             case "U.S. military to accept transgender recruits on Monday: Pentagon":
                 outcomeElement.innerHTML = "<p>This is the REAL NEWS and has been published in</p>";
                 supportingLinksElement.innerHTML = "<a href='https://jp.reuters.com/article/us-usa-military-transgender-idUSKBN1EN1LV/'>Reuters</a>, " +
@@ -156,8 +169,10 @@
 
         // Dynamically load Iframely script after setting the inner HTML
         var script = document.createElement('script');
-        script.src = 'https://iframely.net/embed.js';
+        script.src = 'https://cdn.iframe.ly/embed.js';
         script.async = true;
         document.head.appendChild(script);
     });
 </script>
+</body>
+</html>
