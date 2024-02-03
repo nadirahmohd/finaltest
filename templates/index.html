@@ -141,7 +141,7 @@
 
                 case "U.S. military to accept transgender recruits on Monday: Pentagon":
                     supportingLinksElement.innerHTML = createEmbeddedLink([
-                        'https://www.reuters.com/article/us-usa-military-transgender-idUSKBN1EN1LV/',
+                        'https://jp.reuters.com/article/us-usa-military-transgender-idUSKBN1EN1LV/',
                         'https://www.nst.com.my/world/2017/12/319741/us-military-accept-transgender-recruits-monday-pentagon'
                     ]);
                     break;
@@ -188,11 +188,7 @@
     function createEmbeddedLink(urls) {
         var embeddedLinks = "";
         urls.forEach(function(url) {
-            embeddedLinks += "<div class='iframely-embed'>" +
-                "<div class='iframely-responsive' style='padding-bottom: 52.3333%; padding-top: 120px;'>" +
-                "<a href='" + url + "' data-iframely-url='" + url + "'></a>" +
-                "</div>" +
-                "</div>";
+            embeddedLinks += "<a href='" + url + "' data-iframely-url='" + url + "'>" + url + "</a><br>";
         });
         return embeddedLinks;
     }
