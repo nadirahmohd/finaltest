@@ -114,7 +114,50 @@
 
 <!-- JavaScript to handle form submission and display outcome -->
 <script>
-    // your existing script here
+    document.getElementById('newsForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var enteredTitle = document.getElementById('newsTitle').value;
+
+        var outcomeElement = document.getElementById('outcome');
+        var supportingLinksElement = document.getElementById('supportingLinks');
+
+        // Check the entered title against multiple real news titles
+        switch (enteredTitle) {
+            case "U.S. military to accept transgender recruits on Monday: Pentagon":
+                outcomeElement.innerHTML = "<p>This is the REAL NEWS and has been published in</p>";
+                supportingLinksElement.innerHTML = "<a href='https://jp.reuters.com/article/us-usa-military-transgender-idUSKBN1EN1LV/'>Reuters</a>, " +
+                    "<a href='https://www.nst.com.my/world/2017/12/319741/us-military-accept-transgender-recruits-monday-pentagon'>NST</a>";
+                break;
+
+            case "Senior U.S. Republican senator: 'Let Mr. Mueller do his job'":
+                outcomeElement.innerHTML = "<p>This is the REAL NEWS and has been published in</p>";
+                supportingLinksElement.innerHTML = "<a href='https://www.reuters.com/article/idUSKBN1EP0KE/'>Reuters</a>, " +
+                    "<a href='https://www.wionews.com/world/us-republicans-to-trump-let-mueller-do-his-job-36274'>WIONews</a>";
+                break;
+
+            case "FBI Russia probe helped by Australian diplomat tip-off: NYT":
+                outcomeElement.innerHTML = "<p>This is the REAL NEWS and has been published in</p>";
+                supportingLinksElement.innerHTML = "<a href='https://www.reuters.com/article/us-usa-trump-russia-papadopoulos/fbi-russia-probe-helped-by-australian-diplomat-tip-off-nyt-idUSKBN1EO0K8/'>Reuters</a>, " +
+                    "<a href='https://www.nytimes.com/2017/12/30/us/politics/how-fbi-russia-investigation-began-george-papadopoulos.html'>NYTimes</a>, " +
+                    "<a href='https://www.thestar.com.my/news/world/2017/12/31/fbi-russia-probe-helped-by-australian-diplomat-tipoff--nyt'>TheStar</a>";
+                break;
+
+            case "Trump wants Postal Service to charge 'much more' for Amazon shipments":
+                outcomeElement.innerHTML = "<p>This is the REAL NEWS and has been published in</p>";
+                supportingLinksElement.innerHTML = "<a href='https://www.reuters.com/article/idUSKBN1EN15O/'>Reuters</a>, " +
+                    "<a href='https://www.washingtonpost.com/business/economy/trump-personally-pushed-postmaster-general-to-double-rates-on-amazon-other-firms/2018/05/18/2b6438d2-5931-11e8-858f-12becb4d6067_story.html'>WashingtonPost</a>";
+                break;
+
+            default:
+                outcomeElement.innerHTML = "<p>THIS IS FAKE NEWS</p>";
+                supportingLinksElement.innerHTML = "";
+        }
+
+        // Dynamically load Iframely script after setting the inner HTML
+        var script = document.createElement('script');
+        script.src = 'https://iframely.net/embed.js';
+        script.async = true;
+        document.head.appendChild(script);
+    });
 </script>
-</body>
-</html>
